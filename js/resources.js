@@ -6,7 +6,8 @@
  */
 (function() {
     var resourceCache = {};
-    var readyCallbacks = [];
+    var loading = [];
+	var readyCallbacks = [];
 
     /* This is the publicly accessible image loading function. It accepts
      * an array of strings pointing to image files or a string for a single
