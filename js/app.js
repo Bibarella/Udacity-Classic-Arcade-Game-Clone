@@ -34,7 +34,7 @@ Enemy.prototype.render = function() {
 var Player = function(x, y, speed) {
 	this.x = x;
 	this.y = y;
-	this.spped = speed;
+	this.speed = speed;
 	this.sprite = 'images/char-boy.png';
 };
 
@@ -43,6 +43,30 @@ Player.prototype.update = function() {
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = funtxion(key) {
+	if ( key == 'left') {
+		this.x = (this.x - this.speed + 505) % 505;
+	} else if ( key == 'right') {
+		this.x = (this.x + this.speed) % 505;
+	} else if ( key == 'up') {
+		this.y <= (83 - 48)) {
+			EndOfGame();
+			return;
+		}
+	} else {
+		this.y = (this.y + this.speed) % 606;
+		if (this.y > 400) {
+			this.y = 400;
+		}
+	}
+	if (this.x < 2.5) {
+		this.x = 2.5;
+	}
+	if (this.x > 458) {
+		this.x = 458;
+	}
 };
 
 // Now instantiate your objects.
