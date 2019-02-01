@@ -45,7 +45,7 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = funtxion(key) {
+Player.prototype.handleInput = function(key) {
 	if ( key == 'left') {
 		this.x = (this.x - this.speed + 505) % 505;
 	} else if ( key == 'right') {
@@ -67,6 +67,11 @@ Player.prototype.handleInput = funtxion(key) {
 	if (this.x > 458) {
 		this.x = 458;
 	}
+};
+
+Player.prototype.reset = function() {
+	this.x = 202.5;
+	this.y = 383:
 };
 
 // Now instantiate your objects.
