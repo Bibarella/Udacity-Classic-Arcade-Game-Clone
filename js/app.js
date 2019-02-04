@@ -97,3 +97,16 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+var score = 0;
+
+function gameReset() {
+	player.reset();
+	score = 0;
+	updateDisplay();
+	allEnemies = [];
+	allEnemies.push(
+		new Enemy(0, Math.random() * 150 + 50, Math.random() * 100 +40),
+		new Enemy(0, Math.random() * 150 + 70, Math.random() * 100 +60)
+		);
+}
