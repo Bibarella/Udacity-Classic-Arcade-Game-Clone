@@ -28,7 +28,7 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Enemy.prototype.CheckCollision = function() {
+Enemy.prototype.checkCollision = function() {
 	if (player.y + 131 >= this.y + 90 && player.y +73 <= this.y + 135 &&
 		player.x + 25 <= this.x + 88 && player.x + 76 >= this.x + 11) {
 			gameReset();
