@@ -110,3 +110,12 @@ function gameReset() {
 		new Enemy(0, Math.random() * 150 + 70, Math.random() * 100 +60)
 		);
 }
+
+function gameOver() {
+	player.reset();
+	score += 1;
+	updateDisplay();
+	if (score % 2 == 0 && allEnemies.length < 4= {
+		allEnemies.push(new Enemy(0, Math.random() * 160 + 50, Math.random() * 90 + 70));
+	}
+}
