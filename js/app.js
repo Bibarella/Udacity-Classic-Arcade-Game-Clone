@@ -28,6 +28,14 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+Enemy.prototype.CheckCollision = function() {
+	if (player.y + 131 >= this.y + 90 && player.y +73 <= this.y + 135 &&
+		player.x + 25 <= this.x + 88 && player.x + 76 >= this.x + 11) {
+			gameReset();
+	}
+};
+	
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -51,8 +59,9 @@ Player.prototype.handleInput = function(key) {
 	} else if ( key == 'right') {
 		this.x = (this.x + this.speed) % 505;
 	} else if ( key == 'up') {
-		this.y <= (83 - 48)) {
-			EndOfGame();
+		this.y = (this.y - this.speed + 606) % 606;
+	if (this.y <= (83 - 48)) {
+			gameOver();
 			return;
 		}
 	} else {
@@ -71,7 +80,7 @@ Player.prototype.handleInput = function(key) {
 
 Player.prototype.reset = function() {
 	this.x = 202.5;
-	this.y = 383:
+	this.y = 383;
 };
 
 // Now instantiate your objects.
@@ -115,11 +124,11 @@ function gameOver() {
 	player.reset();
 	score += 1;
 	updateDisplay();
-	if (score % 2 == 0 && allEnemies.length < 4= {
+	if (score % 2 == 0 && allEnemies.length < 4) {
 		allEnemies.push(new Enemy(0, Math.random() * 160 + 50, Math.random() * 90 + 70));
 	}
 }
 
 function updateDisplay() {
-	score.Div.innerHRML = 'Score ' + score;
+	scoreDiv.innerHTML = 'Score ' + score;
 }
