@@ -119,3 +119,7 @@ function gameOver() {
 		allEnemies.push(new Enemy(0, Math.random() * 160 + 50, Math.random() * 90 + 70));
 	}
 }
+
+function updateDisplay() {
+	score.Div.innerHRML = 'Score ' + score;
+}
