@@ -59,8 +59,8 @@ Player.prototype.handleInput = function(key) {
 	} else if ( key == 'right') {
 		this.x = (this.x + this.speed) % 505;
 	} else if ( key == 'up') {
-		this.y = (this.y - this.speed + 606) % 606;
-	if (this.y <= (83 - 48)) {
+		this.y = (this.y - this.speed + 606)%606;
+		if (this.y <= (83 - 48)) {
 			gameOver();
 			return;
 		}
@@ -70,8 +70,8 @@ Player.prototype.handleInput = function(key) {
 			this.y = 400;
 		}
 	}
-	if (this.x < 2.5) {
-		this.x = 2.5;
+	if (this.x < 3) {
+		this.x = 3;
 	}
 	if (this.x > 458) {
 		this.x = 458;
